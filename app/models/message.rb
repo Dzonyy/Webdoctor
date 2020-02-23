@@ -11,8 +11,9 @@ class Message < ApplicationRecord
   end
 
   def decrement_unread_messages
-    inbox = Inbox.find(outbox.id)
-    inbox.unread_messages -= 1
-    inbox.save
+    if inbox.unread_messages.positive?
+      inbox.unread_messages -= 1
+      inbox.save
+    end
   end
 end

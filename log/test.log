@@ -1174,3 +1174,946 @@ Processing by MessagesController#index as HTML
   Rendered navigation/_header.html.erb (0.4ms)
 Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms)
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Luke"], ["last_name", "Skywalker"], ["created_at", "2020-02-23 20:15:12.613191"], ["updated_at", "2020-02-23 20:15:12.613191"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 61]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 61]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_doctor", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_doctor", "t"], ["first_name", "Leia"], ["last_name", "Organa"], ["created_at", "2020-02-23 20:15:12.627194"], ["updated_at", "2020-02-23 20:15:12.627194"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 62]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 62]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_admin", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_admin", "t"], ["first_name", "Obi-wan"], ["last_name", "Kenobi"], ["created_at", "2020-02-23 20:15:12.633626"], ["updated_at", "2020-02-23 20:15:12.633626"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 63]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 63]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Thanks for your order. I will in touch shortly after reviewing your treatment application."], ["outbox_id", 62], ["inbox_id", 61], ["created_at", "2020-02-23 20:15:12.646197"], ["updated_at", "2020-02-23 20:15:12.646197"]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 61]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Luke"], ["last_name", "Skywalker"], ["created_at", "2020-02-23 20:15:12.657733"], ["updated_at", "2020-02-23 20:15:12.657733"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 64]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 64]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_doctor", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_doctor", "t"], ["first_name", "Leia"], ["last_name", "Organa"], ["created_at", "2020-02-23 20:15:12.663565"], ["updated_at", "2020-02-23 20:15:12.663565"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 65]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 65]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_admin", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_admin", "t"], ["first_name", "Obi-wan"], ["last_name", "Kenobi"], ["created_at", "2020-02-23 20:15:12.669576"], ["updated_at", "2020-02-23 20:15:12.669576"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 66]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 66]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Thanks for your order. I will in touch shortly after reviewing your treatment application."], ["outbox_id", 65], ["inbox_id", 64], ["created_at", "2020-02-23 20:15:12.675507"], ["updated_at", "2020-02-23 20:15:12.675507"]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 64]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/messages/1" for 127.0.0.1 at 2020-02-23 21:15:12 +0100
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", -1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInbox Load (0.0ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "messages" SET "read" = ?, "updated_at" = ? WHERE "messages"."id" = ?[0m  [["read", "t"], ["updated_at", "2020-02-23 20:15:12.719218"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering messages/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered messages/show.html.erb within layouts/application (12.7ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 164ms (Views: 138.1ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 21:15:12 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (4.8ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 21:15:12 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_doctor" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_doctor", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Test msg"], ["outbox_id", 1], ["inbox_id", 2], ["created_at", "2020-02-23 20:15:12.884144"], ["updated_at", "2020-02-23 20:15:12.884144"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 8ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:15:12 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.0ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (13.0ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.6ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Luke"], ["last_name", "Skywalker"], ["created_at", "2020-02-23 20:15:12.913793"], ["updated_at", "2020-02-23 20:15:12.913793"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 67]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 67]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_doctor", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_doctor", "t"], ["first_name", "Leia"], ["last_name", "Organa"], ["created_at", "2020-02-23 20:15:12.917295"], ["updated_at", "2020-02-23 20:15:12.917295"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 68]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 68]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_admin", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_admin", "t"], ["first_name", "Obi-wan"], ["last_name", "Kenobi"], ["created_at", "2020-02-23 20:15:12.920734"], ["updated_at", "2020-02-23 20:15:12.920734"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 69]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 69]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Thanks for your order. I will in touch shortly after reviewing your treatment application."], ["outbox_id", 68], ["inbox_id", 67], ["created_at", "2020-02-23 20:15:12.924029"], ["updated_at", "2020-02-23 20:15:12.924029"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 67]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 21:15:12 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (0.9ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 21:15:12 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_doctor" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_doctor", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Test msg"], ["outbox_id", 1], ["inbox_id", 2], ["created_at", "2020-02-23 20:15:12.939893"], ["updated_at", "2020-02-23 20:15:12.939893"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:15:12 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.0ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.0ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (4.4ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Luke"], ["last_name", "Skywalker"], ["created_at", "2020-02-23 20:15:44.422130"], ["updated_at", "2020-02-23 20:15:44.422130"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 67]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 67]]
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_doctor", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_doctor", "t"], ["first_name", "Leia"], ["last_name", "Organa"], ["created_at", "2020-02-23 20:15:44.438131"], ["updated_at", "2020-02-23 20:15:44.438131"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 68]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 68]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_admin", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_admin", "t"], ["first_name", "Obi-wan"], ["last_name", "Kenobi"], ["created_at", "2020-02-23 20:15:44.468287"], ["updated_at", "2020-02-23 20:15:44.468287"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 69]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 69]]
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Thanks for your order. I will in touch shortly after reviewing your treatment application."], ["outbox_id", 68], ["inbox_id", 67], ["created_at", "2020-02-23 20:15:44.484292"], ["updated_at", "2020-02-23 20:15:44.484292"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 67]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Luke"], ["last_name", "Skywalker"], ["created_at", "2020-02-23 20:15:44.495731"], ["updated_at", "2020-02-23 20:15:44.495731"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 70]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 70]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_doctor", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_doctor", "t"], ["first_name", "Leia"], ["last_name", "Organa"], ["created_at", "2020-02-23 20:15:44.502769"], ["updated_at", "2020-02-23 20:15:44.502769"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 71]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 71]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_admin", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_admin", "t"], ["first_name", "Obi-wan"], ["last_name", "Kenobi"], ["created_at", "2020-02-23 20:15:44.509752"], ["updated_at", "2020-02-23 20:15:44.509752"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 72]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 72]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Thanks for your order. I will in touch shortly after reviewing your treatment application."], ["outbox_id", 71], ["inbox_id", 70], ["created_at", "2020-02-23 20:15:44.517995"], ["updated_at", "2020-02-23 20:15:44.517995"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 70]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/messages/1" for 127.0.0.1 at 2020-02-23 21:15:44 +0100
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", -1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInbox Load (0.0ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "messages" SET "read" = ?, "updated_at" = ? WHERE "messages"."id" = ?[0m  [["read", "t"], ["updated_at", "2020-02-23 20:15:44.552191"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering messages/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered messages/show.html.erb within layouts/application (5.5ms)
+  Rendered navigation/_header.html.erb (0.5ms)
+Completed 200 OK in 194ms (Views: 177.5ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 21:15:44 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (4.4ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 21:15:44 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_doctor" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_doctor", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Test msg"], ["outbox_id", 1], ["inbox_id", 2], ["created_at", "2020-02-23 20:15:44.755645"], ["updated_at", "2020-02-23 20:15:44.755645"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 8ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:15:44 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.0ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (11.5ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 0.4ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Luke"], ["last_name", "Skywalker"], ["created_at", "2020-02-23 20:15:44.783812"], ["updated_at", "2020-02-23 20:15:44.783812"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 73]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 73]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_doctor", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_doctor", "t"], ["first_name", "Leia"], ["last_name", "Organa"], ["created_at", "2020-02-23 20:15:44.786380"], ["updated_at", "2020-02-23 20:15:44.786380"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 74]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 74]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_admin", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_admin", "t"], ["first_name", "Obi-wan"], ["last_name", "Kenobi"], ["created_at", "2020-02-23 20:15:44.788544"], ["updated_at", "2020-02-23 20:15:44.788544"]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 75]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 75]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Luke"], ["last_name", "Skywalker"], ["created_at", "2020-02-23 20:16:25.718856"], ["updated_at", "2020-02-23 20:16:25.718856"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 73]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 73]]
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_doctor", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_doctor", "t"], ["first_name", "Leia"], ["last_name", "Organa"], ["created_at", "2020-02-23 20:16:25.732307"], ["updated_at", "2020-02-23 20:16:25.732307"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 74]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 74]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_admin", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_admin", "t"], ["first_name", "Obi-wan"], ["last_name", "Kenobi"], ["created_at", "2020-02-23 20:16:25.738801"], ["updated_at", "2020-02-23 20:16:25.738801"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 75]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 75]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Thanks for your order. I will in touch shortly after reviewing your treatment application."], ["outbox_id", 74], ["inbox_id", 73], ["created_at", "2020-02-23 20:16:25.751699"], ["updated_at", "2020-02-23 20:16:25.751699"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 73]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 21:16:25 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (6.7ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 170ms (Views: 164.6ms | ActiveRecord: 0.0ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 21:16:25 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_doctor" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_doctor", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Test msg"], ["outbox_id", 1], ["inbox_id", 2], ["created_at", "2020-02-23 20:16:25.960837"], ["updated_at", "2020-02-23 20:16:25.960837"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:16:25 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (9.1ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.4ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Luke"], ["last_name", "Skywalker"], ["created_at", "2020-02-23 20:17:09.053940"], ["updated_at", "2020-02-23 20:17:09.053940"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 76]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 76]]
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_doctor", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_doctor", "t"], ["first_name", "Leia"], ["last_name", "Organa"], ["created_at", "2020-02-23 20:17:09.067479"], ["updated_at", "2020-02-23 20:17:09.067479"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 77]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 77]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_admin", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_admin", "t"], ["first_name", "Obi-wan"], ["last_name", "Kenobi"], ["created_at", "2020-02-23 20:17:09.074229"], ["updated_at", "2020-02-23 20:17:09.074229"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 78]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 78]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Thanks for your order. I will in touch shortly after reviewing your treatment application."], ["outbox_id", 77], ["inbox_id", 76], ["created_at", "2020-02-23 20:17:09.087883"], ["updated_at", "2020-02-23 20:17:09.087883"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 76]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 21:17:09 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (6.8ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 181ms (Views: 176.0ms | ActiveRecord: 0.0ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 21:17:09 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_doctor" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_doctor", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Test msg"], ["outbox_id", 1], ["inbox_id", 2], ["created_at", "2020-02-23 20:17:09.302835"], ["updated_at", "2020-02-23 20:17:09.302835"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 0.9ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:17:09 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (9.1ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.4ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Luke"], ["last_name", "Skywalker"], ["created_at", "2020-02-23 20:18:02.577590"], ["updated_at", "2020-02-23 20:18:02.577590"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 79]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 79]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_doctor", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_doctor", "t"], ["first_name", "Leia"], ["last_name", "Organa"], ["created_at", "2020-02-23 20:18:02.580962"], ["updated_at", "2020-02-23 20:18:02.580962"]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 80]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 80]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_admin", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_admin", "t"], ["first_name", "Obi-wan"], ["last_name", "Kenobi"], ["created_at", "2020-02-23 20:18:02.583182"], ["updated_at", "2020-02-23 20:18:02.583182"]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 81]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 81]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 80], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Thanks for your order. I will in touch shortly after reviewing your treatment application."], ["outbox_id", 80], ["inbox_id", 79], ["created_at", "2020-02-23 20:18:02.593258"], ["updated_at", "2020-02-23 20:18:02.593258"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 79]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 21:18:02 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (7.7ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 181ms (Views: 173.1ms | ActiveRecord: 0.0ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 21:18:02 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_doctor" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_doctor", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Test msg"], ["outbox_id", 1], ["inbox_id", 2], ["created_at", "2020-02-23 20:18:02.805163"], ["updated_at", "2020-02-23 20:18:02.805163"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:18:02 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.0ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (9.1ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.4ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_doctor", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_doctor", "t"], ["first_name", "Leia"], ["last_name", "Organa"], ["created_at", "2020-02-23 20:24:23.131228"], ["updated_at", "2020-02-23 20:24:23.131228"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 79]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 79]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("is_patient", "is_admin", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_patient", "f"], ["is_admin", "t"], ["first_name", "Obi-wan"], ["last_name", "Kenobi"], ["created_at", "2020-02-23 20:24:23.134339"], ["updated_at", "2020-02-23 20:24:23.134339"]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "inboxes" ("user_id") VALUES (?)[0m  [["user_id", 80]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "outboxes" ("user_id") VALUES (?)[0m  [["user_id", 80]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 21:24:52 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (7.2ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 194ms (Views: 181.3ms | ActiveRecord: 0.3ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 21:24:52 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_doctor" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_doctor", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Test msg"], ["outbox_id", 1], ["inbox_id", 2], ["created_at", "2020-02-23 20:24:52.844864"], ["updated_at", "2020-02-23 20:24:52.844864"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 39ms (ActiveRecord: 3.1ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:24:52 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (10.8ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.5ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 21:28:14 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (18.3ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 193ms (Views: 180.5ms | ActiveRecord: 0.4ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 21:28:14 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_doctor" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_doctor", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Test msg"], ["outbox_id", 1], ["inbox_id", 2], ["created_at", "2020-02-23 20:28:14.937562"], ["updated_at", "2020-02-23 20:28:14.937562"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 32ms (ActiveRecord: 1.8ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:28:14 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (10.1ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.4ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 21:28:54 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (18.5ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 191ms (Views: 178.0ms | ActiveRecord: 0.5ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 21:28:54 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_doctor" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_doctor", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Test msg"], ["outbox_id", 1], ["inbox_id", 2], ["created_at", "2020-02-23 20:28:54.815447"], ["updated_at", "2020-02-23 20:28:54.815447"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 32ms (ActiveRecord: 1.8ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:28:54 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (11.4ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.5ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 21:29:17 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (18.9ms)
+  Rendered navigation/_header.html.erb (1.4ms)
+Completed 200 OK in 226ms (Views: 213.8ms | ActiveRecord: 0.3ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 21:29:18 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_doctor" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_doctor", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.6ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Test msg"], ["outbox_id", 1], ["inbox_id", 2], ["created_at", "2020-02-23 20:29:18.158956"], ["updated_at", "2020-02-23 20:29:18.158956"]]
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 125ms (ActiveRecord: 7.9ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:29:18 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.2ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.2ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (40.4ms)
+  Rendered navigation/_header.html.erb (2.7ms)
+Completed 200 OK in 54ms (Views: 48.3ms | ActiveRecord: 1.5ms)
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 21:31:50 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (6.8ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 178ms (Views: 155.4ms | ActiveRecord: 1.5ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 21:31:50 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_doctor" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_doctor", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Test msg"], ["outbox_id", 1], ["inbox_id", 2], ["created_at", "2020-02-23 20:31:50.746803"], ["updated_at", "2020-02-23 20:31:50.746803"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 32ms (ActiveRecord: 1.8ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:31:50 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (10.2ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.4ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 21:33:16 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (7.0ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 185ms (Views: 173.0ms | ActiveRecord: 0.3ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 21:33:17 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_doctor" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_doctor", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Test msg"], ["outbox_id", 1], ["inbox_id", 2], ["created_at", "2020-02-23 20:33:17.214330"], ["updated_at", "2020-02-23 20:33:17.214330"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 32ms (ActiveRecord: 1.7ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:33:17 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (10.7ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.4ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 21:33:38 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (18.4ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 192ms (Views: 179.0ms | ActiveRecord: 0.4ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 21:33:38 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_doctor" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_doctor", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Test msg"], ["outbox_id", 1], ["inbox_id", 2], ["created_at", "2020-02-23 20:33:38.864047"], ["updated_at", "2020-02-23 20:33:38.864047"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 32ms (ActiveRecord: 1.8ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:33:38 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (10.1ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.4ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/messages/1" for 127.0.0.1 at 2020-02-23 21:38:34 +0100
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", -1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInbox Load (0.0ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "messages" SET "read" = ?, "updated_at" = ? WHERE "messages"."id" = ?[0m  [["read", "t"], ["updated_at", "2020-02-23 20:38:34.919481"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering messages/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered messages/show.html.erb within layouts/application (13.9ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 210ms (Views: 139.7ms | ActiveRecord: 2.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 21:38:35 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (4.4ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 21:38:35 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_doctor" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_doctor", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Test msg"], ["outbox_id", 1], ["inbox_id", 2], ["created_at", "2020-02-23 20:38:35.084246"], ["updated_at", "2020-02-23 20:38:35.084246"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:38:35 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (9.0ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.5ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 21:38:35 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (0.7ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 21:38:35 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = 1 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_doctor" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_doctor", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 2 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Test msg"], ["outbox_id", 1], ["inbox_id", 2], ["created_at", "2020-02-23 20:38:35.115566"], ["updated_at", "2020-02-23 20:38:35.115566"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:38:35 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.0ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.0ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (3.9ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/messages/1" for 127.0.0.1 at 2020-02-23 21:39:16 +0100
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", -1], ["id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInbox Load (0.0ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "messages" SET "read" = ?, "updated_at" = ? WHERE "messages"."id" = ?[0m  [["read", "t"], ["updated_at", "2020-02-23 20:39:16.716849"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering messages/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered messages/show.html.erb within layouts/application (14.6ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 206ms (Views: 148.2ms | ActiveRecord: 2.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/messages/1" for 127.0.0.1 at 2020-02-23 21:41:36 +0100
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.7ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.3ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", -1], ["id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mInbox Load (0.1ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "messages" SET "read" = ?, "updated_at" = ? WHERE "messages"."id" = ?[0m  [["read", "t"], ["updated_at", "2020-02-23 20:41:36.410903"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering messages/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered messages/show.html.erb within layouts/application (31.3ms)
+  Rendered navigation/_header.html.erb (0.6ms)
+Completed 200 OK in 911ms (Views: 661.8ms | ActiveRecord: 10.9ms)
+Started POST "/payments/new/1" for 127.0.0.1 at 2020-02-23 21:41:37 +0100
+Processing by PaymentsController#create as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mOutbox Load (1.5ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_admin" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_admin", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.7ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = 3 LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("body", "outbox_id", "inbox_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "I've lost my script, please issue a new one at a charge of €10"], ["outbox_id", 1], ["inbox_id", 3], ["created_at", "2020-02-23 20:41:37.136629"], ["updated_at", "2020-02-23 20:41:37.136629"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "inboxes" SET "unread_messages" = ? WHERE "inboxes"."id" = ?[0m  [["unread_messages", 1], ["id", 3]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "payments" ("user_id") VALUES (?)[0m  [["user_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 40ms (ActiveRecord: 5.6ms)
+Started GET "/" for 127.0.0.1 at 2020-02-23 21:41:37 +0100
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mInbox Load (0.2ms)[0m  [1m[34mSELECT  "inboxes".* FROM "inboxes" WHERE "inboxes"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."inbox_id" = ?[0m  [["inbox_id", 1]]
+  [1m[36mOutbox Load (0.5ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered messages/index.html.erb within layouts/application (49.2ms)
+  Rendered navigation/_header.html.erb (2.6ms)
+Completed 200 OK in 64ms (Views: 60.5ms | ActiveRecord: 2.3ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m

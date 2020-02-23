@@ -6,6 +6,6 @@
   <div class="card-body">
     <p class="card-text"><%= @message.body %></p>
     <%= link_to "Reply", new_message_path(reply: @message), class: "btn btn-primary" %>
-    <%= link_to "I've lost my prescription", new_payment_path(user_id: @message.inbox.user), method: 'post', class: "btn btn-primary" %>
+    <%= link_to "I've lost my prescription", new_payment_path(user_id: @message.inbox.user), method: 'post', class: "btn btn-primary btn-prescription" %>
   </div>
 </div>
