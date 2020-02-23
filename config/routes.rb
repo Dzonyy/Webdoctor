@@ -9,5 +9,4 @@ Rails.application.routes.draw do
   resources :messages
 
   post '/payments/new/:user_id', to: 'payments#create', as: :new_payment
-  # post '/payments/new/:user_id', to: 'payments#create'
 end
