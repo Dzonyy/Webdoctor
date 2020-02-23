@@ -42,3 +42,150 @@ Processing by MessagesController#new as HTML
   Rendered navigation/_header.html.erb (0.4ms)
 Completed 200 OK in 1380ms (Views: 1367.2ms | ActiveRecord: 0.3ms)
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 19:35:13 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (5.7ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 184ms (Views: 173.4ms | ActiveRecord: 0.3ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 19:35:13 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 19:35:13 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (0.7ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 19:35:13 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 19:35:13 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (0.7ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 19:35:13 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 19:44:00 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (6.1ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 174ms (Views: 162.0ms | ActiveRecord: 0.3ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 19:44:00 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 19:44:00 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (0.7ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 19:44:00 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 19:44:00 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (0.7ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 19:44:00 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 19:44:57 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (5.8ms)
+  Rendered navigation/_header.html.erb (0.4ms)
+Completed 200 OK in 183ms (Views: 171.8ms | ActiveRecord: 0.3ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 19:44:58 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 19:44:58 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (0.7ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 19:44:58 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/message/new/1" for 127.0.0.1 at 2020-02-23 19:44:58 +0100
+Processing by MessagesController#new as HTML
+  Parameters: {"reply"=>"1"}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (0.7ms)
+  Rendered navigation/_header.html.erb (0.3ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+Started POST "/message/new/1" for 127.0.0.1 at 2020-02-23 19:44:58 +0100
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"body"=>"Test msg"}, "commit"=>"Send Message", "reply"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."is_patient" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["is_patient", "t"], ["LIMIT", 1]]
+  [1m[36mOutbox Load (0.1ms)[0m  [1m[34mSELECT  "outboxes".* FROM "outboxes" WHERE "outboxes"."user_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
