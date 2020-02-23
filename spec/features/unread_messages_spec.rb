@@ -10,6 +10,7 @@ RSpec.feature 'Replying message', type: :feature do
   Message.create(body: 'Thanks for your order. I will in touch shortly after reviewing your treatment application.',
                  outbox: @doctor.outbox,
                  inbox: @patient.inbox)
+
   scenario 'Reply' do
     visit '/message/new/1'
 

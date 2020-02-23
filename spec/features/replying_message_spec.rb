@@ -10,6 +10,6 @@ RSpec.feature 'Replying message', type: :feature do
       fill_in 'message_body', with: 'Test msg'
     end
     find('#new_message input[type=submit]').click
-    expect(Message.last.read).to b_false
+    expect(Message.last.read).to be false
   end
 end
