@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   def self.current
     User.patient.first
+    # User.doctor.first
   end
 
   def self.default_admin

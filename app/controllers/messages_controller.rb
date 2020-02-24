@@ -18,11 +18,11 @@ class MessagesController < ApplicationController
   def create
     old_message = Message.find_by(id: params[:reply]) if params[:reply].present?
     @message = Message.new(message_params)
-    @message.outbox = Outbox.find_by(user_id: User.current)
+    @message.outbox = User.current.outbox
     @message.inbox = if old_message.created_at < 7.days.ago
-                       Inbox.find_by(user_id: User.default_admin)
+                       User.default_admin.inbox
                      else
-                       Inbox.find_by(user_id: User.default_doctor)
+                       User.default_doctor.inbox
                      end
     if @message.save
       redirect_to root_path

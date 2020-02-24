@@ -6,12 +6,14 @@ class Message < ApplicationRecord
   after_commit :increment_unread_messages, on: :create
 
   def increment_unread_messages
-    inbox.unread_messages += 1
-    inbox.save
+    if inbox.user.is_doctor?
+      inbox.unread_messages += 1
+      inbox.save
+    end
   end
 
   def decrement_unread_messages
-    if inbox.unread_messages.positive?
+    if inbox.unread_messages.positive? && inbox.user.is_doctor?
       inbox.unread_messages -= 1
       inbox.save
     end

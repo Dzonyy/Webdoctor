@@ -7,8 +7,8 @@ class PaymentsController < ApplicationController
     @payment = Payment.create(user_id: params[:user_id])
     if @payment.save
       redirect_to root_path
-    else
-      puts yoo
     end
+  rescue
+    redirect_to root_path
   end
 end
